@@ -1,0 +1,5 @@
+.invertedLogo {
+    filter: invert(100%);
+}
+
+.defaultLogo {}
