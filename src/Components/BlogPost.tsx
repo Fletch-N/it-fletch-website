@@ -11,6 +11,7 @@ export interface BlogPostProps {
     body: {
         author: string;
         date: string;
+        keywords: string[];
         content: JSX.Element;
     }
     footer: {}
@@ -43,12 +44,10 @@ const BlogPost: FC<BlogPostProps> = ({header, body, footer}) => {
                             {body.date}
                         </Title>
                     </Group>
+                    <Title order={5}>{body.keywords.join(", ")}</Title>
                     {body.content}
                 </Stack>
                 
-            </CardSection>
-            <CardSection id="blog-footer" className="blog-footer" >
-                Footer
             </CardSection>
         </Card>
     )

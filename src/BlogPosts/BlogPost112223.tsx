@@ -12,15 +12,16 @@ const Content = <Fragment>
     <Text>AACS ultimately lost the fight to purge the internet, but left us with a valuable lesson on handling breaches involving public release of confidential information. Whether or not people had the right to leak the information was never the problem that needed to be solved. The fact that leaks were even possible was a massive engineering problem, and a better focus of the AACS would have been funneling all of the legal resources from ongoing lawsuits into better research and development. Once the information hit public internet, no amount of suing was ever going to put it back.</Text>
 </Fragment>
 
-const BlogPost112923: BlogPostProps = {
+const BlogPost112223: BlogPostProps = {
     header: {
-        backgroundImage: "/assets/images/blog-headers/112923.jpg",
+        backgroundImage: "/assets/images/blog-headers/112223.jpg",
         imageRef: ImageRef,
         title: "The Cat's Out of the Bag"
     },
     body: {
         author: "Fletcher Nichols",
         date: "11-22-23",
+        keywords: ["drm", "aacs", "steganography", "cryptography"],
         content: Content
     },
     footer: {
@@ -28,4 +29,4 @@ const BlogPost112923: BlogPostProps = {
     
 }
 
-export default BlogPost112923;
+export default BlogPost112223;
