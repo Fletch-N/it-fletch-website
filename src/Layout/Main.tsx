@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 
 const Main = () => {
     return (
-        <AppShell.Main>
+        <AppShell.Main pb={40}>
             <Outlet />
         </AppShell.Main>
     )

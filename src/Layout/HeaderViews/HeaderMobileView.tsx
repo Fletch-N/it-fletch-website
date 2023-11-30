@@ -13,7 +13,7 @@ const HeaderMobileView: FC<IProps> = ({ opened, toggle }) => {
             {/* Header Left - Logo and Title */}
             <Burger opened={opened} onClick={toggle} size="sm" />
             <AppLogo invert={true} />
-            <Title order={4}>Fletcher Nichols - CyberSecurity</Title>
+            <Title order={4}>Fletcher - CyberSecurity</Title>
         </Group>
     )
 }

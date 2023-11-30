@@ -1,0 +1,23 @@
+.blog-title {
+    height: 100%;
+    padding: 0px 20px 0px 20px;
+}
+
+.blog-header {
+    height: 400px;
+    width: 100%;
+}
+
+.blog-body {
+    padding: 20px;
+}
+
+.blog-body p {
+    text-indent: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.blog-footer {
+    padding: 20px;
+}

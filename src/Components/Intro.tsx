@@ -3,10 +3,10 @@ import { Image, Stack, Title, Text, Grid } from "@mantine/core";
 const Intro = () => {
     return (
         <Grid justify="space-evenly" columns={16} >
-            <Grid.Col span={4}>
+            <Grid.Col span={{ base: 12, xs: 10, sm: 10,  md: 8, lg: 6, xl: 4}}>
                 <Image h={"100%"} radius={"50%"} src="/assets/images/portrait.png" />
             </Grid.Col>
-            <Grid.Col span={10}  >
+            <Grid.Col span={{ base: 14, xl: 10 }}  >
                 <Stack h={"100%"} align="flex-start" justify="space-evenly" >
                     <Title order={2}>Hi, I'm Fletcher!</Title>
                     <Text size="lg" >
