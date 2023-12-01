@@ -62,5 +62,3 @@ Source Code Directory for my homepage [IT-Fletch.com](http://it-fletch.com)
 ## TODO
 - Attributions for Logo
   - <a href="https://www.flaticon.com/free-icons/security" title="security icons">Security icons created by juicy_fish - Flaticon</a>
-
-Testing VSCode Git Profile Change actually happened...
