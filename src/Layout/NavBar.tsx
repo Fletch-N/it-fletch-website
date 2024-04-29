@@ -3,22 +3,23 @@ import {
     IconUserSearch,
     IconLicense,
     IconSubtask,
-    IconArticle,
+    // IconArticle,
     IconAddressBook,
     IconServer
 } from '@tabler/icons-react';
 import NavTab from "../Components/NavTab";
 import "./NavBar.css";
 import { FC } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { NavigateFunction } from "react-router-dom";
 
 interface IProps {
     toggle: () => void
+    path: string
+    navigate: NavigateFunction
 }
 
-const NavBar: FC<IProps> = ({ toggle }) => {
-    const navigate = useNavigate()
-    const { tabValue } = useParams();
+const NavBar: FC<IProps> = (props) => {
+    const {toggle, path, navigate} = props
 
     const handleChange = (value: string | null) => {
         navigate(`/${value}`)
@@ -28,7 +29,7 @@ const NavBar: FC<IProps> = ({ toggle }) => {
     return (
         <AppShell.Navbar p={'md'} >
             <Tabs
-                value={tabValue}
+                value={path}
                 defaultValue={"About"}
                 onChange={handleChange}
                 orientation="vertical"
@@ -39,7 +40,7 @@ const NavBar: FC<IProps> = ({ toggle }) => {
                     <NavTab label="About" icon={<IconUserSearch />} />
                     <NavTab label="Resume" icon={<IconLicense />} />
                     <NavTab label="Works" icon={<IconSubtask />} />
-                    <NavTab label="Blog" icon={<IconArticle />} />
+                    {/* <NavTab label="Blog" icon={<IconArticle />} /> */}
                     <NavTab label="Resources" icon={<IconServer />} />
                     <NavTab label="Contact" icon={<IconAddressBook />} />
                 </Tabs.List>

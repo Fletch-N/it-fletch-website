@@ -5,22 +5,22 @@ import { AppShell } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import NavBar from './NavBar';
 import Main from './Main';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 
 const App = () => {
     const [opened, { toggle }] = useDisclosure();
     const navigate = useNavigate()
-    const { tabValue } = useParams();
+    const { pathname } = useLocation();
+    const path = pathname.substring(1)
 
     useEffect(() => {
-        if (tabValue && tabValue.length) {
-            return
-        } else {
-            navigate('About')
+        console.log("useEffect: App.tsx")
+        if (!path) {
+            console.log("Redirect")
+            navigate("/About")
         }
-
-    }, [tabValue, navigate])
+    }, [path, navigate])
 
     return (
         <AppShell
@@ -29,7 +29,7 @@ const App = () => {
             padding="md"
         >
             <Header opened={opened} toggle={toggle} />
-            <NavBar toggle={toggle} />
+            <NavBar toggle={toggle} path={path} navigate={navigate} />
             <Main />
             <Footer />
         </AppShell>

@@ -10,12 +10,16 @@ interface IProps {
     toggle: () => void
 }
 
-const Header: FC<IProps> = ({opened, toggle}) => {
+const Header: FC<IProps> = ({ opened, toggle }) => {
+    const largeTitle = "Fletcher Nichols - Application and Cybersecurity"
+    const tabletTitle = "Fletcher Nichols - Application and Cybersecurity"
+    const mobileTitle = "Application and Cybersecurity"
+    
     return (
         <AppShell.Header color="dark" >
-            <HeaderLargeView />
-            <HeaderTabletView />
-            <HeaderMobileView opened={opened} toggle={toggle} />
+            <HeaderLargeView title={ largeTitle } />
+            <HeaderTabletView title={ tabletTitle } />
+            <HeaderMobileView opened={opened} toggle={toggle} title={ mobileTitle } />
         </AppShell.Header>
     )
 }

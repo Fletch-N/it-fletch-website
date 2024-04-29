@@ -1,4 +1,4 @@
-import { Stack, Text } from "@mantine/core";
+import {Stack, Text } from "@mantine/core";
 import ResumeSection, { TResumeSection } from "../../Components/ResumeSection";
 import {
     IconTextCaption,
@@ -8,29 +8,29 @@ import {
     IconComponents,
     IconBooks
 } from "@tabler/icons-react";
+import EducationData from "../../Data/Resume/EducationData";
+import EducationEntry from "../../Components/Resume/EducationEntry";
+import ExperienceData from "../../Data/Resume/ExperienceData";
+import ExperienceEntry from "../../Components/Resume/ExperienceEntry";
+import SummaryData from "../../Data/Resume/SummaryData";
+import SummaryEntry from "../../Components/Resume/SummaryEntry";
+import CertificateData from "../../Data/Resume/CertificateData";
+import CertificateEntry from "../../Components/Resume/CertificateEntry";
 
 const resumeSections: TResumeSection[] = [
     {
         label: "Summary",
         labelIcon: <IconTextCaption />,
-        content: [
-            <Text key={1} > Sample Line 1</Text>,
-            <Text key={2} > Sample Line 2</Text>,
-            <Text key={3} > Sample Line 3</Text>,
-            <Text key={4} > Sample Line 4</Text>,
-            <Text key={5} > Sample Line 5</Text>,
-        ]
+        content: SummaryData.map((x, i) => (
+            <SummaryEntry key={i} {...x} />
+        ))
     },
     {
         label: "Certifications",
         labelIcon: <IconCertificate />,
-        content: [
-            <Text key={1} > Sample Line 1</Text>,
-            <Text key={2} > Sample Line 2</Text>,
-            <Text key={3} > Sample Line 3</Text>,
-            <Text key={4} > Sample Line 4</Text>,
-            <Text key={5} > Sample Line 5</Text>,
-        ]
+        content: CertificateData.map((x, i) => (
+            <CertificateEntry key={i} {...x} />
+        ))
     },
     {
         label: "Technical Skills",
@@ -44,6 +44,13 @@ const resumeSections: TResumeSection[] = [
         ]
     },
     {
+        label: "Experience",
+        labelIcon: <IconComponents />,
+        content: ExperienceData.map((x, i, a) => (
+            <ExperienceEntry key={i} lastItem={a.length === i + 1} {...x} />
+        ))
+    },
+    {
         label: "Projects",
         labelIcon: <IconListDetails />,
         content: [
@@ -55,26 +62,11 @@ const resumeSections: TResumeSection[] = [
         ]
     },
     {
-        label: "Experience",
-        labelIcon: <IconComponents />,
-        content: [
-            <Text key={1} > Sample Line 1</Text>,
-            <Text key={2} > Sample Line 2</Text>,
-            <Text key={3} > Sample Line 3</Text>,
-            <Text key={4} > Sample Line 4</Text>,
-            <Text key={5} > Sample Line 5</Text>,
-        ]
-    },
-    {
         label: "Education",
         labelIcon: <IconBooks />,
-        content: [
-            <Text key={1} > Sample Line 1</Text>,
-            <Text key={2} > Sample Line 2</Text>,
-            <Text key={3} > Sample Line 3</Text>,
-            <Text key={4} > Sample Line 4</Text>,
-            <Text key={5} > Sample Line 5</Text>,
-        ]
+        content: EducationData.map((x, i, a) => (
+            <EducationEntry key={i} lastItem={a.length === i + 1} {...x} />
+        ))
     }
 ]
 

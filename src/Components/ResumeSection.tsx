@@ -1,6 +1,6 @@
 import { Grid, Group, Stack, Title } from "@mantine/core"
 import './ResumeSection.css';
-import { FC } from "react";
+import { FC, Fragment } from "react";
 
 export type TResumeSection = {
     label: string,
@@ -16,14 +16,21 @@ const ResumeSection: FC<IProps> = ({label, labelIcon, content}) => {
             <Grid.Col span={2} className="section-label" >
                 <Group justify="flex-start" className="section-border" >
                     {labelIcon}
-                    <Title  order={4}  >
+                    <Title visibleFrom="lg" order={4}   >
                         {label}
                     </Title>
                 </Group>
             </Grid.Col>
             <Grid.Col span={10} className="section-content" >
                 <Stack className="section-border" >
-                    {content.map(x => x)}
+                <Title order={4} hiddenFrom="lg" >
+                    {label} 
+                </Title>
+                    {content.map((x, i) => (
+                        <Fragment key={i}>
+                            {x}
+                        </Fragment>
+                    ))}
                 </Stack>
             </Grid.Col>
         </Grid>

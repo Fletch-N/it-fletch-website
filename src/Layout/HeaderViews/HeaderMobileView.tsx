@@ -1,19 +1,17 @@
 import { Burger, Group, Title } from "@mantine/core";
 import { FC } from "react"
-import AppLogo from "../../Components/AppLogo";
 
 interface IProps {
-    opened: boolean,
-    toggle: () => void
+    opened: boolean;
+    toggle: () => void;
+    title: string;
 }
 
-const HeaderMobileView: FC<IProps> = ({ opened, toggle }) => {
+const HeaderMobileView: FC<IProps> = ({ opened, toggle, title }) => {
     return (
         <Group id="HeaderMobileView" h="100%" px="md" hiddenFrom="sm" >
-            {/* Header Left - Logo and Title */}
             <Burger opened={opened} onClick={toggle} size="sm" />
-            <AppLogo invert={true} />
-            <Title order={4}>Fletcher - CyberSecurity</Title>
+            <Title order={4}>{ title }</Title>
         </Group>
     )
 }
